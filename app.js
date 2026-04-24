@@ -5,8 +5,8 @@ app.get("/", (req, res) => {
   res.send("Hola Mundo DevOps 🚀");
 });
 
-module.exports = app;
+const PORT = process.env.PORT || 3000;
 
-if (require.main === module) {
-  app.listen(3000, () => console.log("Server running"));
-}
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
